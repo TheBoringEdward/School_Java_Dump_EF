@@ -145,9 +145,9 @@ public class Zahl{
         System.out.print("\n\n Please enter value to be compared to "+name+" ("+n+")\n");
         i = scn.nextDouble();
         if(n > i){
-            System.out.print("\n "+name+" ("+n+") is bigger than: "+i);
+            System.out.print("\n "+name+" ("+n+") is bigger than "+i);
         }else{
-            System.out.print("\n "+name+" ("+n+") is smaller than: "+i);
+            System.out.print("\n "+name+" ("+n+") is smaller than "+i);
         }
     }
 
@@ -171,3 +171,4 @@ public class Zahl{
 
 }
 
+//TODO: Make gPrim work
