@@ -19,6 +19,8 @@ public class ReMC{
         final Bruch b1 = new Bruch("b1", 2, 5);
 
         boolean rn = true;
+        boolean rt = true;
+        boolean rb = true;
 
         /*
          show: shows value of class
@@ -86,35 +88,91 @@ public class ReMC{
         System.out.print("\n\n Debugging End"); //I'm a genius /s
 
         while(rn) {
-            System.out.print("\n\n Commands at your disposal: \n 0: Quit\n 1: Set\n 2: Add\n 3: Subtract\n 4: Multiply\n 5: Divide\n 6: Round\n 7: Check for quadrant\n 8: Check for prime\n 9: Compare size");
-            System.out.print("\n\n Please enter what you wish to do with z1 ("+ z1.get_n()+"):\n");
-            a = scn2.nextInt();     //I'd do unspeakable things to z1
-
+            System.out.print("\n\n Commands at your disposal:\n 0: Quit\n 1. Decimals\n 2. Fractions\n");
+            a = scn2.nextInt();
             switch(a){
-                case 0: System.out.print("\n Quitting...");
-                    rn = false;
+
+                case 2:
+                    rb = true;
+                    while(rb){
+                        System.out.print("\n\n Commands at your disposal:\n 0: Go back\n 1: Set\n 2: Add decimal\n 3: Add fraction\n : Subtract\n : Multiply\n : Divide\n : Round\n : Compare size");
+                        System.out.print("\n\n Please enter what you wish to do with b1 (" + b1.cnt() +"/"+b1.den()+"):\n");
+                        a = scn2.nextInt();     //I'd do unspeakable things to b1
+                        switch(a){
+                            case 0:
+                                System.out.print("\n Going back...");
+                                rb = false;
+                                break;
+                            case 1:
+                                b1.qSet();
+                                break;
+                            case 2:
+                                b1.qAddD();
+                                break;
+                            case 3:
+                                b1.qAddF();
+                                break;
+                            default:
+                                System.out.print("\n " + a + " is not a valid command");
+                                break;
+                        }
+                    }
                     break;
-                case 1: z1.qSet();
-                        break;
-                case 2: z1.qAdd();
-                        break;
-                case 3: z1.qSub();
-                        break;
-                case 4: z1.qMul();
-                        break;
-                case 5: z1.qDiv();
-                        break;
-                case 6: z1.rnd();
-                        break;
-                case 7: z1.sqrt();
-                        break;
-                case 8: z1.prim();
-                        break;
-                case 9: z1.qSiz();
-                        break;
+
+                case 1:
+                    rt = true;
+                    while(rt) {
+                        System.out.print("\n\n Commands at your disposal:\n 0: Go back\n 1: Set\n 2: Add\n 3: Subtract\n 4: Multiply\n 5: Divide\n 6: Round\n 7: Check for quadrant\n 8: Check for prime\n 9: Compare size");
+                        System.out.print("\n\n Please enter what you wish to do with z1 (" + z1.get_n() + "):\n");
+                        a = scn2.nextInt();     //I'd do unspeakable things to z1
+
+                        switch (a) {
+                            case 0:
+                                System.out.print("\n Going back...");
+                                rt = false;
+                                break;
+                            case 1:
+                                z1.qSet();
+                                break;
+                            case 2:
+                                z1.qAdd();
+                                break;
+                            case 3:
+                                z1.qSub();
+                                break;
+                            case 4:
+                                z1.qMul();
+                                break;
+                            case 5:
+                                z1.qDiv();
+                                break;
+                            case 6:
+                                z1.rnd();
+                                break;
+                            case 7:
+                                z1.sqrt();
+                                break;
+                            case 8:
+                                z1.prim();
+                                break;
+                            case 9:
+                                z1.qSiz();
+                                break;
                             //I owe Jonas so bloody much
+                            default:
+                                System.out.print("\n " + a + " is not a valid command");
+                                break;
+                        }
+                    }
+                    break;
+
                 default:
                     System.out.print("\n " + a + " is not a valid command");
+                    break;
+
+                case 0:
+                    System.out.print("\n Quitting...");
+                    rn = false;
                     break;
             }
 
