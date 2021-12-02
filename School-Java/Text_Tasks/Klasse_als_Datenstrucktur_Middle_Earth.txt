@@ -1,0 +1,34 @@
+1.
+Der Ranger besitzt nur private Variablen.
+Die folgenden Variablen lauten:
+-"money" als Integer
+-"weapon" als Text bzw. String
+-"pos x" und "pos y" als Integer
+-"strength" als Kommazahl bzw. Double
+-"alive" als Boolean (Entweder True oder False)
+
+2.
+-takeMoney
+-takeWeapon
+-move
+-recover
+-suffer
+-showMoney
+-showPosition
+-showPosition
+-showWeapon
+-hasMoney
+
+5.
+
+
+I have 0 coins.
+
+I have 5 coins.
+
+I am at 0,0
+
+I am at 10,20
+
+Beware! I have a knife!
+
